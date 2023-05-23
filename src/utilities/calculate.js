@@ -8,4 +8,11 @@ const multiply = (value) => {
   return multiply;
 };
 
-export { add, multiply };
+const getTotalPrice = (product) => {
+  let initialValue = 0;
+  const reducer = (previous, current) => previous + current.price;
+  const total = product.reduce(reducer, initialValue);
+  return total;
+};
+
+export { add, multiply, getTotalPrice as getTotal };
